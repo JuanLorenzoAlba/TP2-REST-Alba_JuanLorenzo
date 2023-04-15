@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RestaurantOpenApi
+build_property.RootNamespace = RestaurantOpenApi
+build_property.ProjectDir = C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\RestaurantOpenApi\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\RestaurantOpenApi
+build_property._RazorSourceGeneratorDebug = 
