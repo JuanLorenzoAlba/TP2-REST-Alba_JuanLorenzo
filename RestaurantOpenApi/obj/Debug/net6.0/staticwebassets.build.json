@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pvTVAWuvyBHREjarWbpZj+8g86WPMK0JLcWL8IZVdHk=",
+  "Source": "RestaurantOpenApi",
+  "BasePath": "_content/RestaurantOpenApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

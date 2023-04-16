@@ -1,0 +1,72 @@
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Application.exe
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Application.deps.json
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Application.runtimeconfig.json
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Domain.dll
+C:\Users\solow\Desktop\Prueba\Application\bin\Debug\net6.0\Domain.pdb
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\refint\Application.dll
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
+C:\Users\solow\Desktop\Prueba\Application\obj\Debug\net6.0\ref\Application.dll
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.exe
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.deps.json
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.runtimeconfig.json
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.dll
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.pdb
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\refint\Application.dll
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
+C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.exe
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.deps.json
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.runtimeconfig.json
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\refint\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.exe
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.deps.json
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.runtimeconfig.json
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\refint\Application.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll
