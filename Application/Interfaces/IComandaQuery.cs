@@ -4,7 +4,11 @@ namespace Application.Interfaces
 {
     public interface IComandaQuery
     {
-        List<Comanda> GetComandaList();
         Comanda GetComandaById(Guid comandaId);
+        List<Comanda> GetComandaList();
+        Comanda GetComandaByFecha(string fecha);
+        Comanda GetComandaByFormaEntrega(int tipo);
+
+        List<Mercaderia> GetMercaderias(Guid comandaId);
     }
 }

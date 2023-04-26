@@ -4,7 +4,9 @@ namespace Application.Interfaces
 {
     public interface IMercaderiaQuery
     {
-        List<Mercaderia> GetMercaderiaList();
         Mercaderia GetMercaderiaById(int mercaderiaId);
+        List<Mercaderia> GetMercaderiaListOrdered(int tipo, string nombre, string orden);
+        List<Mercaderia> GetMercaderiaList();
+        Mercaderia GetMercaderiaByFormaEntrega(int tipo);
     }
 }

@@ -4,7 +4,7 @@ namespace Application.Interfaces
 {
     public interface IFormaEntregaQuery
     {
-        List<FormaEntrega> GetFormaEntregaList();
         FormaEntrega GetFormaEntregaById(int formaEntregaId);
+        List<FormaEntrega> GetFormaEntregaList();
     }
 }

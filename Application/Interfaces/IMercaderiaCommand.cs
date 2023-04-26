@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Request;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
@@ -6,6 +7,6 @@ namespace Application.Interfaces
     {
         Mercaderia InsertMercaderia(Mercaderia mercaderia);
         Mercaderia RemoveMercaderia(int mercaderiaId);
-        Mercaderia UpdateMercaderia(int mercaderiaId);
+        Mercaderia UpdateMercaderia(int mercaderiaId, MercaderiaRequest request);
     }
 }

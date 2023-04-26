@@ -15,8 +15,8 @@ namespace Infrastructure.Querys
 
         public ComandaMercaderia GetComandaMercaderiaById(int comandaMercaderiaId)
         {
-            var getGetComandaMercaderiaById = _context.ComandasMercaderias.Single(x => x.ComandaMercaderiaId == comandaMercaderiaId);
-            return getGetComandaMercaderiaById;
+            var getComandaMercaderiaById = _context.ComandasMercaderias.Single(x => x.ComandaMercaderiaId == comandaMercaderiaId);
+            return getComandaMercaderiaById;
         }
 
         public List<ComandaMercaderia> GetComandaMercaderiaList()

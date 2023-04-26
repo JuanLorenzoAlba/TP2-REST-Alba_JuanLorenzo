@@ -1,13 +1,14 @@
-﻿using Domain.Entities;
+﻿using Application.Request;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
     public interface IComandaMercaderiaService
     {
-        ComandaMercaderia CreateComandaMercaderia(Mercaderia mercaderia, Comanda comanda);
+        ComandaMercaderia GetComandaMercaderiaById(int comandaMercaderiaId);
+        List<ComandaMercaderia> GetComandaMercaderiaList();
+        ComandaMercaderia CreateComandaMercaderia(Comanda comanda, Mercaderia mercaderia);
         ComandaMercaderia RemoveComandaMercaderia(int comandaMercaderiaId);
         ComandaMercaderia UpdateComandaMercaderia(int comandaMercaderiaId);
-        List<ComandaMercaderia> GetComandaMercaderiaList();
-        ComandaMercaderia GetComandaMercaderiaById(int comandaMercaderiaId);
     }
 }

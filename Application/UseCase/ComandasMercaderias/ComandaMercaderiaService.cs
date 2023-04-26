@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Request;
 using Domain.Entities;
 
 namespace Application.UseCase.ComandasMercaderias
@@ -24,7 +25,7 @@ namespace Application.UseCase.ComandasMercaderias
             return _query.GetComandaMercaderiaList();
         }
 
-        public ComandaMercaderia CreateComandaMercaderia(Mercaderia mercaderia, Comanda comanda)
+        public ComandaMercaderia CreateComandaMercaderia(Comanda comanda, Mercaderia mercaderia)
         {
             var comandaMercaderia = new ComandaMercaderia
             {

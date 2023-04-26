@@ -15,8 +15,8 @@ namespace Infrastructure.Querys
 
         public FormaEntrega GetFormaEntregaById(int formaEntregaId)
         {
-            var getGetFormaEntregaById = _context.FormaEntregas.Single(x => x.FormaEntregaId == formaEntregaId);
-            return getGetFormaEntregaById;
+            var getFormaEntregaById = _context.FormaEntregas.FirstOrDefault(x => x.FormaEntregaId == formaEntregaId);
+            return getFormaEntregaById;
         }
 
         public List<FormaEntrega> GetFormaEntregaList()

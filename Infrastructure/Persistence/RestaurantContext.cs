@@ -13,10 +13,8 @@ namespace Infrastructure.Persistence
         public DbSet<Comanda> Comandas { get; set; }
         public DbSet<FormaEntrega> FormaEntregas { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=RestaurantDB;Trusted_Connection=True;TrustServerCertificate=True");
-        }
+        public RestaurantContext(DbContextOptions<RestaurantContext> options)
+            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

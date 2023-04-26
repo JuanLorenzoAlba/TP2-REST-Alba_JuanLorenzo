@@ -42,9 +42,6 @@ C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.deps.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.runtimeconfig.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.exe
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
@@ -64,9 +61,14 @@ C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.deps.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.runtimeconfig.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.exe
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
+C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.deps.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Infrastructure.dll
@@ -75,14 +77,6 @@ C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Al
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Domain.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Application.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\bin\Debug\net6.0\Domain.pdb
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.AssemblyReference.cache
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll

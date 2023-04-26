@@ -20,6 +20,7 @@ namespace Infrastructure.Command
 
             return tipoMercaderia;
         }
+
         public TipoMercaderia RemoveTipoMercaderia(int tipoMercaderiaId)
         {
             var removeTipoMercaderiaId = _context.TipoMercaderias.Single(x => x.TipoMercaderiaId == tipoMercaderiaId);
@@ -28,6 +29,7 @@ namespace Infrastructure.Command
 
             return removeTipoMercaderiaId;
         }
+
         public TipoMercaderia UpdateTipoMercaderia(int tipoMercaderiaId)
         {
             var updateTipoMercaderiaId = _context.TipoMercaderias.Single(x => x.TipoMercaderiaId == tipoMercaderiaId);

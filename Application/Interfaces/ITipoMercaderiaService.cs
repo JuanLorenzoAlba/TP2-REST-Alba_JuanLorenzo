@@ -2,12 +2,12 @@
 
 namespace Application.Interfaces
 {
-    public interface ITipoMercaderiaSevice
+    public interface ITipoMercaderiaService
     {
+        TipoMercaderia GetTipoMercaderiaById(int tipoMercaderiaId);
+        List<TipoMercaderia> GetTipoMercaderiaList();
         TipoMercaderia CreateTipoMercaderia(string descripcion);
         TipoMercaderia RemoveTipoMercaderia(int tipoMercaderiaId);
         TipoMercaderia UpdateTipoMercaderia(int tipoMercaderiaId);
-        List<TipoMercaderia> GetTipoMercaderiaList();
-        TipoMercaderia GetTipoMercaderiaById(int tipoMercaderiaId);
     }
 }

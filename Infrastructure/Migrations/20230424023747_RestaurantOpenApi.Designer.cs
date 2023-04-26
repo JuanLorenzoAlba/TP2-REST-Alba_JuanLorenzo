@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20230410204000_RestaurantDB")]
-    partial class RestaurantDB
+    [Migration("20230424023747_RestaurantOpenApi")]
+    partial class RestaurantOpenApi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.4")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -49,21 +49,23 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.ComandaMercaderia", b =>
                 {
-                    b.Property<int>("MercaderiaId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("ComandaId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("ComandaMercaderiaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ComandaMercaderiaId"));
 
-                    b.HasKey("MercaderiaId", "ComandaId");
+                    b.Property<Guid>("ComandaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("MercaderiaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ComandaMercaderiaId");
 
                     b.HasIndex("ComandaId");
+
+                    b.HasIndex("MercaderiaId");
 
                     b.ToTable("ComandaMercaderia", (string)null);
                 });
@@ -147,7 +149,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 1,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://comidasparaguayas.com/wp-content/uploads/2019/11/empanada-de-carne-paraguaya_700x465.jpg",
                             Ingredientes = "2 tazas de harina de trigo\r\n| 1 cucharadita de sal\r\n| 1/2 taza de agua tibia\r\n| 1/4 taza de aceite de oliva\r\n| 1 cebolla picada\r\n| 2 dientes de ajo picados\r\n| 1/2 kilo de carne molida\r\n| 1/2 cucharadita de comino",
                             Nombre = "Empanadas de Carne",
                             Precio = 300,
@@ -157,7 +159,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 2,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.elmundoeats.com/wp-content/uploads/2019/01/Spring-Rolls.jpg",
                             Ingredientes = "8 láminas de papel de arroz\r\n| 150 gramos de fideos de arroz\r\n| 1 zanahoria rallada\r\n| 1/2 pepino rallado\r\n| 1/4 taza de cilantro fresco picado\r\n| 8 hojas de lechuga\r\n| 8 hojas de menta fresca\r\n| 1 cucharada de salsa de soja",
                             Nombre = "Rollitos de primavera",
                             Precio = 1186,
@@ -167,7 +169,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 3,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://i.blogs.es/9ea7a4/pollo_curry-copia/650_1200.jpg",
                             Ingredientes = "4 pechugas de pollo sin piel, cortadas en cubos\r\n| 1 cebolla picada\r\n| 3 dientes de ajo picados\r\n| 2 cucharadas de jengibre fresco rallado\r\n| 2 cucharadas de curry en polvo\r\n| 1 lata de leche de coco\r\n| 1/2 taza de caldo de pollo",
                             Nombre = "Pollo al Curry",
                             Precio = 1500,
@@ -177,7 +179,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 4,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.paulinacocina.net/wp-content/uploads/2015/03/P1150541-e1439164269502.jpg",
                             Ingredientes = "4 filetes de carne (puedes usar carne de res, pollo o ternera)\r\n| 2 huevos batidos\r\n| 1 taza de pan rallado\r\n| Sal y pimienta al gusto\r\n| Aceite vegetal para freír\r\n| 4 rebanadas de jamón\r\n| 4 rebanadas de queso mozzarella",
                             Nombre = "Milanesa Napolitana",
                             Precio = 1800,
@@ -187,7 +189,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 5,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2021/04/canelones-de-pollo-con-espinacas.jpg",
                             Ingredientes = "12-15 placas de canelones\r\n| 1 calabacín mediano\r\n| 1 berenjena mediana\r\n| 2 zanahorias medianas\r\n| 1 cebolla mediana\r\n| 2 dientes de ajo picados\r\n| 1 taza de espinacas frescas\r\n| 2 tazas de salsa de tomate",
                             Nombre = "Canelones de Verdura",
                             Precio = 1600,
@@ -197,7 +199,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 6,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://imag.bonviveur.com/sorrentinos-rellenos-de-jamon-y-queso-con-salsa-marinara.jpg",
                             Ingredientes = "1 paquete de sorrentinos de jamón y queso (puedes encontrarlos en la sección de congelados)\r\n| 2 cucharadas de aceite de oliva\r\n| 1 cebolla picada finamente\r\n| 2 dientes de ajo picados finamente\r\n| 1/2 taza de caldo de pollo",
                             Nombre = "Sorrentinos de Jamon y Queso",
                             Precio = 1650,
@@ -207,7 +209,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 7,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.comedera.com/wp-content/uploads/2022/06/bife-de-chorizo.jpg",
                             Ingredientes = "4 bifes de chorizo de 250 gramos cada uno\r\n| Sal gruesa\r\n| Pimienta negra molida\r\n| Aceite de oliva",
                             Nombre = "Bife de chorizo",
                             Precio = 2100,
@@ -217,7 +219,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 8,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://resizer.iproimg.com/unsafe/880x/filters:format(webp)/https://assets.iprofesional.com/assets/jpg/2021/10/525015.jpg",
                             Ingredientes = "1 kilo de carne de asado (puede ser bife de chorizo, vacío, entraña, costillar, o el corte de tu preferencia)\r\n| Sal gruesa\r\n| Chimichurri (opcional)",
                             Nombre = "Asado",
                             Precio = 2500,
@@ -227,7 +229,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 9,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.annarecetasfaciles.com/files/pizza-margarita-1-scaled.jpg",
                             Ingredientes = "Masa de pizza (puedes hacerla casera o comprarla lista)\r\n| 1 taza de salsa de tomate\r\n| 250 gramos de mozzarella fresca\r\n| 10 hojas de albahaca fresca\r\n| Aceite de oliva",
                             Nombre = "Pizza Margarita",
                             Precio = 1950,
@@ -237,7 +239,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 10,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.comedera.com/wp-content/uploads/2022/04/Pizza-cuatro-quesos-shutterstock_1514858234.jpg",
                             Ingredientes = "Masa de pizza (puedes hacerla casera o comprarla lista)\r\n| 1 taza de salsa de tomate\r\n| 150 gramos de queso mozzarella rallado\r\n| 50 gramos de queso gorgonzola o queso azul\r\n| 50 gramos de queso de cabra\r\n| 50 gramos de queso parmesano rallado",
                             Nombre = "Pizza Cuatro Quesos",
                             Precio = 2200,
@@ -247,7 +249,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 11,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.pequerecetas.com/wp-content/uploads/2010/05/como-hacer-sandwich-de-atun.jpg",
                             Ingredientes = "2 latas de atún en agua, escurrido\r\n| 1/4 de taza de mayonesa\r\n| 1/4 de taza de cebolla picada finamente\r\n| 2 cucharadas de jugo de limón\r\n| 1 cucharadita de mostaza dijon\r\n| 1/4 de cucharadita de sal\r\n| 1/4 de cucharadita de pimienta",
                             Nombre = "Sandwich de atún",
                             Precio = 1000,
@@ -257,7 +259,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 12,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://pizzamarket.com/wp-content/uploads/2020/06/PANINI-JAMON-Y-QUESO.jpg",
                             Ingredientes = "4 panes para panini\r\n| 8 rebanadas de jamón cocido\r\n| 8 rebanadas de queso mozzarella\r\n| 1/4 de taza de pesto de albahaca\r\n| 2 cucharadas de mantequilla derretida",
                             Nombre = "Panini de jamón y queso",
                             Precio = 800,
@@ -267,7 +269,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 13,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.cocinacaserayfacil.net/wp-content/uploads/2018/06/Ensalada-cesar.jpg",
                             Ingredientes = "1 lechuga romana grande, lavada y cortada en trozos\r\n| 2 tazas de crutones\r\n| 1/2 taza de queso parmesano rallado\r\n| 2 pechugas de pollo, cocidas y cortadas en tiras\r\n| Sal y pimienta al gusto\r\n| Aceite de oliva\r\n| Aderezo César",
                             Nombre = "Ensalada César",
                             Precio = 1050,
@@ -277,7 +279,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 14,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://assets.unileversolutions.com/recipes-v2/209800.jpg",
                             Ingredientes = "1 lechuga romana, lavada y cortada en trozos\r\n| 1 taza de tomates cherry, cortados por la mitad\r\n| 1/2 taza de aceitunas negras, sin hueso\r\n| 1/2 taza de pepinos, cortados en rodajas\r\n| 1/2 taza de queso feta, desmenuzado",
                             Nombre = "Ensalada Mediterránea",
                             Precio = 1150,
@@ -287,7 +289,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 15,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://i2.wp.com/espejored.com/wp-content/uploads/2019/10/agua-potable-1.jpg?fit=798%2C1200&ssl=1",
                             Ingredientes = "1 litro de agua\r\n4 limones grandes\r\n| 1/2 taza de azúcar (o al gusto)\r\n| Hielo al gusto",
                             Nombre = "Agua fresca",
                             Precio = 500,
@@ -297,7 +299,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 16,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://images.ecestaticos.com/4pf3S6T-4p3m68lVpNi1FNSsRY0=/0x0:1699x1130/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fe8d%2Fa2d%2Ff42%2Fe8da2df4282557bd4975dbf7feb13143.jpg",
                             Ingredientes = "4-6 naranjas maduras\r\n| Azúcar o edulcorante al gusto (opcional)\r\n| Agua fría (opcional)",
                             Nombre = "Jugo de Naranja",
                             Precio = 600,
@@ -307,7 +309,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 17,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://assets.untappd.com/photos/2022_01_29/753fb24bccb877e0ba79fb01be5c8f8f_640x640.jpg",
                             Ingredientes = "4 kg de malta de cebada (pale ale)\r\n| 350 g de malta crystal 40L\r\n| 350 g de malta Vienna\r\n| 20 g de lúpulo Warrior (60 minutos)\r\n| 30 g de lúpulo Citra (20 minutos)\r\n| 30 g de lúpulo Galaxy (20 minutos)",
                             Nombre = "Galaxitra - American IPA",
                             Precio = 1550,
@@ -317,7 +319,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 18,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://assets.untappd.com/photos/2023_04_04/7e998172a2ad65469839247db0a5c06d_640x640.jpg",
                             Ingredientes = "4 kg de malta Pilsner\r\n| 1 kg de malta Vienna\r\n| 500 g de malta Munich\r\n| 500 g de malta Crystal 40L\r\n| 200 g de malta Wheat\r\n| 500 g de azúcar belga (candi sugar)\r\n| 30 g de lúpulo Saaz (60 minutos)",
                             Nombre = "Flanders Red - Sour Power",
                             Precio = 1550,
@@ -327,7 +329,7 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 19,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://www.recetasderechupete.com/wp-content/uploads/2020/05/Tiramis%C3%BA-italiano.jpg",
                             Ingredientes = "500 gramos de queso mascarpone\r\n3 huevos\r\n| 150 gramos de azúcar\r\n| 300 ml de café fuerte\r\n| 200 gramos de bizcochos de soletilla\r\n| Cacao en polvo",
                             Nombre = "Tiramisú",
                             Precio = 700,
@@ -337,9 +339,9 @@ namespace Infrastructure.Migrations
                         new
                         {
                             MercaderiaId = 20,
-                            Imagen = "Imagen.PNG",
+                            Imagen = "https://imag.bonviveur.com/flan-de-vainilla-en-el-plato.jpg",
                             Ingredientes = "1 lata de leche condensada (397 gramos)\r\n| 2 tazas de leche entera\r\n| 4 huevos\r\n| 1 cucharadita de esencia de vainilla\r\n| 1/2 taza de azúcar",
-                            Nombre = "Flan",
+                            Nombre = "Flan de Vainilla",
                             Precio = 600,
                             Preparacion = "Precalienta el horno a 180°C.\r\n| En una olla, calienta la leche condensada y la leche entera a fuego medio, removiendo constantemente, hasta que estén bien mezcladas",
                             TipoMercaderiaId = 10

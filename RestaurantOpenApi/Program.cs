@@ -1,3 +1,14 @@
+using Application.Interfaces;
+using Application.UseCase.Comandas;
+using Application.UseCase.ComandasMercaderias;
+using Application.UseCase.FormaEntregas;
+using Application.UseCase.Mercaderias;
+using Application.UseCase.TipoMercaderias;
+using Infrastructure.Command;
+using Infrastructure.Persistence;
+using Infrastructure.Querys;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +17,31 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Custom
+
+var connectionString = builder.Configuration["ConnectionString"];
+builder.Services.AddDbContext<RestaurantContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<ITipoMercaderiaService, TipoMercaderiaService>();
+builder.Services.AddScoped<ITipoMercaderiaCommand, TipoMercaderiaCommand>();
+builder.Services.AddScoped<ITipoMercaderiaQuery, TipoMercaderiaQuery>();
+
+builder.Services.AddScoped<IMercaderiaService, MercaderiaService>();
+builder.Services.AddScoped<IMercaderiaCommand, MercaderiaCommand>();
+builder.Services.AddScoped<IMercaderiaQuery, MercaderiaQuery>();
+
+builder.Services.AddScoped<IComandaMercaderiaService, ComandaMercaderiaService>();
+builder.Services.AddScoped<IComandaMercaderiaCommand, ComandaMercaderiaCommand>();
+builder.Services.AddScoped<IComandaMercaderiaQuery, ComandaMercaderiaQuery>();
+
+builder.Services.AddScoped<IComandaService, ComandaService>();
+builder.Services.AddScoped<IComandaCommand, ComandaCommand>();
+builder.Services.AddScoped<IComandaQuery, ComandaQuery>();
+
+builder.Services.AddScoped<IFormaEntregaService, FormaEntregaService>();
+builder.Services.AddScoped<IFormaEntregaCommand, FormaEntregaCommand>();
+builder.Services.AddScoped<IFormaEntregaQuery, FormaEntregaQuery>();
 
 var app = builder.Build();
 

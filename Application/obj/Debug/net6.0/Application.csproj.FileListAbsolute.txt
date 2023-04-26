@@ -34,9 +34,7 @@ C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
 C:\Users\solow\Desktop\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.exe
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.deps.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.runtimeconfig.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.dll
@@ -50,11 +48,8 @@ C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\refint\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP1-ORM-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.exe
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.deps.json
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.runtimeconfig.json
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Application.pdb
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\bin\Debug\net6.0\Domain.dll
@@ -68,5 +63,4 @@ C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Al
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\refint\Application.dll
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.pdb
-C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\Application.genruntimeconfig.cache
 C:\Users\solow\Desktop\Primer Cuatrimestre\Proyecto de Software N°1\TP2-REST-Alba_JuanLorenzo\Application\obj\Debug\net6.0\ref\Application.dll

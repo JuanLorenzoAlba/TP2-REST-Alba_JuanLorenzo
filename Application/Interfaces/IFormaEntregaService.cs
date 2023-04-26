@@ -4,10 +4,10 @@ namespace Application.Interfaces
 {
     public interface IFormaEntregaService
     {
+        FormaEntrega GetFormaEntregaById(int formaEntregaId);
+        List<FormaEntrega> GetFormaEntregaList();
         FormaEntrega CreateFormaEntrega(string descripcion);
         FormaEntrega RemoveFormaEntrega(int formaEntregaId);
         FormaEntrega UpdateFormaEntrega(int formaEntregaId);
-        List<FormaEntrega> GetFormaEntregaList();
-        FormaEntrega GetFormaEntregaById(int formaEntregaId);
     }
 }

@@ -1,11 +1,12 @@
 ﻿using Application.Interfaces;
+using Application.Request;
+using Application.Response;
 using Domain.Entities;
 
 namespace Application.UseCase.Mercaderias
 {
     public class MercaderiaService : IMercaderiaService
     {
-
         private readonly IMercaderiaCommand _command;
         private readonly IMercaderiaQuery _query;
 
@@ -15,9 +16,50 @@ namespace Application.UseCase.Mercaderias
             _query = query;
         }
 
-        public Mercaderia GetMercaderiaById(int mercaderiaId)
+        public MercaderiaResponse GetMercaderiaById(int mercaderiaId)
         {
-            return _query.GetMercaderiaById(mercaderiaId);
+            var mercaderia = _query.GetMercaderiaById(mercaderiaId);
+
+            return new MercaderiaResponse
+            {
+                id = mercaderia.MercaderiaId,
+                nombre = mercaderia.Nombre,
+                tipo = new TipoMercaderiaResponse
+                {
+                    id = mercaderia.TipoMercaderiaId,
+                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                },
+                precio = mercaderia.Precio,
+                ingredientes = mercaderia.Ingredientes,
+                preparacion = mercaderia.Preparacion,
+                imagen = mercaderia.Imagen,
+            };
+        }
+
+        public List<MercaderiaGetResponse> GetMercaderiaListOrdered(int tipo, string nombre, string orden)
+        {
+            var mercaderiaList = _query.GetMercaderiaListOrdered(tipo, nombre, orden);
+
+            var mercaderiaListResponse = new List<MercaderiaGetResponse>();
+
+            foreach (var x in mercaderiaList)
+            {
+                var mercaderiaResponse = new MercaderiaGetResponse
+                {
+                    id = x.MercaderiaId,
+                    nombre = x.Nombre,
+                    imagen = x.Imagen,
+                    precio = x.Precio,
+                    tipo = new TipoMercaderiaResponse
+                    {
+                        id = x.TipoMercaderia.TipoMercaderiaId,
+                        descripcion = x.TipoMercaderia.Descripcion
+                    }
+                };
+                mercaderiaListResponse.Add(mercaderiaResponse);
+            }
+
+            return mercaderiaListResponse;
         }
 
         public List<Mercaderia> GetMercaderiaList()
@@ -25,30 +67,75 @@ namespace Application.UseCase.Mercaderias
             return _query.GetMercaderiaList();
         }
 
-        public Mercaderia CreateMercaderia(string nombre, int precio, string ingredientes, string preparacion, string imagen, TipoMercaderia tipoMercaderia)
+        public MercaderiaResponse CreateMercaderia(MercaderiaRequest request)
         {
             var mercaderia = new Mercaderia
             {
-                Nombre = nombre,
-                Precio = precio,
-                Ingredientes = ingredientes,
-                Preparacion = preparacion,
-                Imagen = imagen,
-                TipoMercaderia = tipoMercaderia,
-                TipoMercaderiaId = tipoMercaderia.TipoMercaderiaId
+                Nombre = request.nombre,
+                Precio = request.precio,
+                Ingredientes = request.ingredientes,
+                Preparacion = request.preparacion,
+                Imagen = request.imagen,
+                TipoMercaderiaId = request.tipo,
+                TipoMercaderia = _query.GetMercaderiaByFormaEntrega(request.tipo).TipoMercaderia
             };
 
-            return _command.InsertMercaderia(mercaderia);
+            _command.InsertMercaderia(mercaderia);
+
+            return new MercaderiaResponse
+            {
+                id = mercaderia.MercaderiaId,
+                nombre = mercaderia.Nombre,
+                tipo = new TipoMercaderiaResponse
+                {
+                    id = mercaderia.TipoMercaderiaId,
+                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                },
+                precio = mercaderia.Precio,
+                ingredientes = mercaderia.Ingredientes,
+                preparacion = mercaderia.Preparacion,
+                imagen = mercaderia.Imagen,
+            };
         }
 
-        public Mercaderia RemoveMercaderia(int mercaderiaId)
+        public MercaderiaResponse RemoveMercaderia(int mercaderiaId)
         {
-            return _command.RemoveMercaderia(mercaderiaId);
+            var mercaderia = _command.RemoveMercaderia(mercaderiaId);
+
+            return new MercaderiaResponse
+            {
+                id = mercaderia.MercaderiaId,
+                nombre = mercaderia.Nombre,
+                tipo = new TipoMercaderiaResponse
+                {
+                    id = mercaderia.TipoMercaderiaId,
+                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                },
+                precio = mercaderia.Precio,
+                ingredientes = mercaderia.Ingredientes,
+                preparacion = mercaderia.Preparacion,
+                imagen = mercaderia.Imagen,
+            };
         }
 
-        public Mercaderia UpdateMercaderia(int mercaderiaId)
+        public MercaderiaResponse UpdateMercaderia(int mercaderiaId, MercaderiaRequest request)
         {
-            return _command.UpdateMercaderia(mercaderiaId);
+            var mercaderia = _command.UpdateMercaderia(mercaderiaId, request);
+
+            return new MercaderiaResponse
+            {
+                id = mercaderia.MercaderiaId,
+                nombre = mercaderia.Nombre,
+                tipo = new TipoMercaderiaResponse
+                {
+                    id = mercaderia.TipoMercaderiaId,
+                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                },
+                precio = mercaderia.Precio,
+                ingredientes = mercaderia.Ingredientes,
+                preparacion = mercaderia.Preparacion,
+                imagen = mercaderia.Imagen,
+            };
         }
     }
 }

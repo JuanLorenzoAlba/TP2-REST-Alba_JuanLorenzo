@@ -1,14 +1,16 @@
-﻿using Domain.Entities;
+﻿using Application.Request;
+using Application.Response;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
     public interface IComandaService
     {
-        Comanda CreateComanda(int precioTotal, DateTime fecha, FormaEntrega formaEntrega);
+        ComandaGetResponse GetComandaById(Guid comandaId);
+        List<Comanda> GetComandaList();
+        ComandaResponse GetComandaByFecha(string fecha);
+        ComandaResponse CreateComanda(ComandaRequest request);
         Comanda RemoveComanda(Guid comandaId);
         Comanda UpdateComanda(Guid comandaId);
-        List<Comanda> GetComandaList();
-        Comanda GetComandaById(Guid comandaId);
-
     }
 }

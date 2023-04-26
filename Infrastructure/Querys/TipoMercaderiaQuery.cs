@@ -15,8 +15,8 @@ namespace Infrastructure.Querys
 
         public TipoMercaderia GetTipoMercaderiaById(int tipoMercaderiaId)
         {
-            var getGetTipoMercaderiaById = _context.TipoMercaderias.Single(x => x.TipoMercaderiaId == tipoMercaderiaId);
-            return getGetTipoMercaderiaById;
+            var getTipoMercaderiaById = _context.TipoMercaderias.Single(x => x.TipoMercaderiaId == tipoMercaderiaId);
+            return getTipoMercaderiaById;
         }
 
         public List<TipoMercaderia> GetTipoMercaderiaList()

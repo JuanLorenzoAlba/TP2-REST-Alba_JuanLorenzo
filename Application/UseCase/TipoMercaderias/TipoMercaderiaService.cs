@@ -3,7 +3,7 @@ using Domain.Entities;
 
 namespace Application.UseCase.TipoMercaderias
 {
-    public class TipoMercaderiaService : ITipoMercaderiaSevice
+    public class TipoMercaderiaService : ITipoMercaderiaService
     {
         private readonly ITipoMercaderiaCommand _command;
         private readonly ITipoMercaderiaQuery _query;

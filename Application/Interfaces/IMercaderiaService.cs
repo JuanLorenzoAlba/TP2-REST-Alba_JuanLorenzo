@@ -1,13 +1,16 @@
-﻿using Domain.Entities;
+﻿using Application.Request;
+using Application.Response;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {
     public interface IMercaderiaService
     {
-        Mercaderia CreateMercaderia(string nombre, int precio, string ingredientes, string preparacion, string imagen, TipoMercaderia tipoMercaderia);
-        Mercaderia RemoveMercaderia(int mercaderiaId);
-        Mercaderia UpdateMercaderia(int mercaderiaId);
+        MercaderiaResponse GetMercaderiaById(int mercaderiaId);
+        List<MercaderiaGetResponse> GetMercaderiaListOrdered(int tipo, string nombre, string orden);
         List<Mercaderia> GetMercaderiaList();
-        Mercaderia GetMercaderiaById(int mercaderiaId);
+        MercaderiaResponse CreateMercaderia(MercaderiaRequest request);
+        MercaderiaResponse RemoveMercaderia(int mercaderiaId);
+        MercaderiaResponse UpdateMercaderia(int mercaderiaId, MercaderiaRequest request);
     }
 }
