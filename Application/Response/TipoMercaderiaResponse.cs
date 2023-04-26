@@ -2,7 +2,7 @@
 {
     public class TipoMercaderiaResponse
     {
-        public int id { get; set; }
-        public string descripcion { get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
     }
 }

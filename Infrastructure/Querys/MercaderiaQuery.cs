@@ -16,51 +16,43 @@ namespace Infrastructure.Querys
 
         public Mercaderia GetMercaderiaById(int mercaderiaId)
         {
-            var getMercaderiaById = _context.Mercaderias
+            var mercaderia = _context.Mercaderias
                 .Include(s => s.TipoMercaderia)
                 .FirstOrDefault(x => x.MercaderiaId == mercaderiaId);
 
-            return getMercaderiaById;
+            return mercaderia;
         }
 
-        public Mercaderia GetMercaderiaByFormaEntrega(int tipo)
+        public List<Mercaderia> GetMercaderiaListFilters(int tipo, string nombre, string orden)
         {
-            var getMercaderiaById = _context.Mercaderias
+            var mercaderiaList = _context.Mercaderias
                 .Include(s => s.TipoMercaderia)
-                .FirstOrDefault(x => x.TipoMercaderia.TipoMercaderiaId == tipo);
-
-            return getMercaderiaById;
-        }
-
-        public List<Mercaderia> GetMercaderiaListOrdered(int tipo, string nombre, string orden)
-        {
-            var GetMercaderiaByParametros = _context.Mercaderias
-                   .Include(s => s.TipoMercaderia)
-                   .OrderBy(p => p.Precio)
-                   .ToList();
+                .OrderBy(p => p.Precio)
+                .ToList();
 
             if (tipo != 0)
             {
-                GetMercaderiaByParametros = GetMercaderiaByParametros.Where(p => p.TipoMercaderiaId == tipo).ToList(); ;
+                mercaderiaList = mercaderiaList.Where(p => p.TipoMercaderiaId == tipo).ToList();
             }
 
-            if(nombre != null)
+            if (nombre != null)
             {
-                GetMercaderiaByParametros = GetMercaderiaByParametros.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower())).ToList();
+                mercaderiaList = mercaderiaList.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower())).ToList();
             }
 
             if (orden.ToLower() == "desc")
             {
-                GetMercaderiaByParametros = GetMercaderiaByParametros.OrderByDescending(p => p.Precio).ToList();
+                mercaderiaList = mercaderiaList.OrderByDescending(p => p.Precio).ToList();
             }
-            
-            return GetMercaderiaByParametros;
+
+            return mercaderiaList;
         }
 
         public List<Mercaderia> GetMercaderiaList()
         {
-            var getMercaderiaList = _context.Mercaderias.ToList();
-            return getMercaderiaList;
+            var mercaderiaList = _context.Mercaderias.ToList();
+
+            return mercaderiaList;
         }
     }
 }

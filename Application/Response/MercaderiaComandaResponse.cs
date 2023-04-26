@@ -2,8 +2,8 @@
 {
     public class MercaderiaComandaResponse
     {
-        public int id { set; get; }
-        public string nombre { set; get; }
-        public int precio { set; get; }
+        public int Id { set; get; }
+        public string Nombre { set; get; }
+        public int Precio { set; get; }
     }
 }

@@ -6,6 +6,6 @@ namespace Application.Interfaces
     {
         Comanda InsertComanda(Comanda comanda);
         Comanda RemoveComanda(Guid comandaId);
-        Comanda UpdateComanda(Guid comandaId);
+        Comanda UpdateComanda(Comanda comanda);
     }
 }

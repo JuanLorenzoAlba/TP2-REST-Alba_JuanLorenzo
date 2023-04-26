@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces;
-using Application.Request;
 using Domain.Entities;
 
 namespace Application.UseCase.ComandasMercaderias
@@ -45,7 +44,9 @@ namespace Application.UseCase.ComandasMercaderias
 
         public ComandaMercaderia UpdateComandaMercaderia(int comandaMercaderiaId)
         {
-            return _command.UpdateComandaMercaderia(comandaMercaderiaId);
+            var comandaMercaderia = _query.GetComandaMercaderiaById(comandaMercaderiaId);
+
+            return _command.UpdateComandaMercaderia(comandaMercaderia);
         }
     }
 }

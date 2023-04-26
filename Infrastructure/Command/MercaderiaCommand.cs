@@ -1,5 +1,4 @@
 ﻿using Application.Interfaces;
-using Application.Request;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -25,38 +24,22 @@ namespace Infrastructure.Command
 
         public Mercaderia RemoveMercaderia(int mercaderiaId)
         {
-            var removeMercaderiaId = _context.Mercaderias
+            var mercaderia = _context.Mercaderias
             .Include(s => s.TipoMercaderia)
             .FirstOrDefault(x => x.MercaderiaId == mercaderiaId);
 
-            _context.Remove(removeMercaderiaId);
+            _context.Remove(mercaderia);
             _context.SaveChanges();
 
-
-            return removeMercaderiaId;
+            return mercaderia;
         }
 
-        public Mercaderia UpdateMercaderia(int mercaderiaId, MercaderiaRequest request)
+        public Mercaderia UpdateMercaderia(Mercaderia mercaderia)
         {
-            var updateMercaderia = _context.Mercaderias
-            .FirstOrDefault(x => x.MercaderiaId == mercaderiaId);
-
-            var tipoMercaderia = _context.TipoMercaderias
-            .FirstOrDefault(x => x.TipoMercaderiaId == request.tipo);
-
-            updateMercaderia.Nombre = request.nombre;
-            updateMercaderia.Precio = request.precio;
-            updateMercaderia.Ingredientes = request.ingredientes;
-            updateMercaderia.Preparacion = request.preparacion;
-            updateMercaderia.Imagen = request.imagen;
-            updateMercaderia.TipoMercaderia = tipoMercaderia;
-            updateMercaderia.TipoMercaderiaId = tipoMercaderia.TipoMercaderiaId;
-
-            _context.Update(updateMercaderia);
+            _context.Update(mercaderia);
             _context.SaveChanges();
 
-
-            return updateMercaderia;
+            return mercaderia;
         }
     }
 }

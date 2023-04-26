@@ -2,6 +2,6 @@
 {
     public class BadRequest
     {
-        public string message { set; get; }
+        public string Message { set; get; }
     }
 }

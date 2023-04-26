@@ -2,7 +2,6 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
 
 namespace Infrastructure.Querys
 {
@@ -17,53 +16,45 @@ namespace Infrastructure.Querys
 
         public Comanda GetComandaById(Guid comandaId)
         {
-            var getComandaById = _context.Comandas
+            var comanda = _context.Comandas
                 .Include(s => s.FormaEntrega)
                 .FirstOrDefault(x => x.ComandaId == comandaId);
 
-            return getComandaById;
-        }
-
-        public List<Comanda> GetComandaList()
-        {
-            var getComandaList = _context.Comandas.ToList();
-            return getComandaList;
+            return comanda;
         }
 
         public Comanda GetComandaByFecha(string fecha)
         {
             DateTime dateTime = DateTime.Parse(fecha);
 
-            var getComandaByFecha = _context.Comandas
+            var comanda = _context.Comandas
                 .Include(s => s.FormaEntrega)
                 .FirstOrDefault(x => x.Fecha == dateTime);
 
-            return getComandaByFecha;
+            return comanda;
         }
 
-        public Comanda GetComandaByFormaEntrega(int tipo)
+        public List<Comanda> GetComandaList()
         {
-            var getComandaById = _context.Comandas
-                .Include(s => s.FormaEntrega)
-                .FirstOrDefault(x => x.FormaEntrega.FormaEntregaId == tipo);
+            var comandaList = _context.Comandas.ToList();
 
-            return getComandaById;
+            return comandaList;
         }
-
 
         public List<Mercaderia> GetMercaderias(Guid comandaId)
         {
-            var comanda = _context.Comandas
+            var comandaList = _context.Comandas
                 .Include(cm => cm.ComandasMercaderias)
                 .ThenInclude(m => m.Mercaderia)
+                .ThenInclude(m => m.TipoMercaderia)
                 .FirstOrDefault(c => c.ComandaId == comandaId);
 
 
-            var mercaderias = comanda.ComandasMercaderias
+            var mercaderiaList = comandaList.ComandasMercaderias
                 .Select(cm => cm.Mercaderia)
                 .ToList();
 
-            return mercaderias;
+            return mercaderiaList;
         }
     }
 }

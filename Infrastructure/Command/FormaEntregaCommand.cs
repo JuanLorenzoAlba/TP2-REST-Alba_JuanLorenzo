@@ -23,20 +23,19 @@ namespace Infrastructure.Command
 
         public FormaEntrega RemoveFormaEntrega(int formaEntregaId)
         {
-            var removeFormaEntregaId = _context.FormaEntregas.Single(x => x.FormaEntregaId == formaEntregaId);
-            _context.Remove(removeFormaEntregaId);
+            var formaEntrega = _context.FormaEntregas.FirstOrDefault(x => x.FormaEntregaId == formaEntregaId);
+            _context.Remove(formaEntrega);
             _context.SaveChanges();
 
-            return removeFormaEntregaId;
+            return formaEntrega;
         }
 
-        public FormaEntrega UpdateFormaEntrega(int formaEntregaId)
+        public FormaEntrega UpdateFormaEntrega(FormaEntrega formaEntrega)
         {
-            var updateFormaEntregaId = _context.FormaEntregas.Single(x => x.FormaEntregaId == formaEntregaId);
-            _context.Update(updateFormaEntregaId);
+            _context.Update(formaEntrega);
             _context.SaveChanges();
 
-            return updateFormaEntregaId;
+            return formaEntrega;
         }
     }
 }

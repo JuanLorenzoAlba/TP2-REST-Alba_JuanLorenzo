@@ -1,13 +1,11 @@
-﻿using Domain.Entities;
-
-namespace Application.Response
+﻿namespace Application.Response
 {
     public class ComandaResponse
     {
-        public Guid id { set; get; }
-        public List<MercaderiaComandaResponse> mercaderias { get; set; }
-        public FormaEntregaResponse formaEntrega { get; set; }
-        public int total { set; get; }
-        public DateTime fecha { set; get; }
+        public Guid Id { set; get; }
+        public List<MercaderiaComandaResponse> Mercaderias { get; set; }
+        public FormaEntregaResponse FormaEntrega { get; set; }
+        public int Total { set; get; }
+        public DateTime Fecha { set; get; }
     }
 }

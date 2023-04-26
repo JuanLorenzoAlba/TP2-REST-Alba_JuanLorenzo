@@ -41,7 +41,9 @@ namespace Application.UseCase.TipoMercaderias
 
         public TipoMercaderia UpdateTipoMercaderia(int tipoMercaderiaId)
         {
-            return _command.UpdateTipoMercaderia(tipoMercaderiaId);
+            var tipoMercaderia = _query.GetTipoMercaderiaById(tipoMercaderiaId);
+
+            return _command.UpdateTipoMercaderia(tipoMercaderia);
         }
     }
 }

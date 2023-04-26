@@ -15,14 +15,16 @@ namespace Infrastructure.Querys
 
         public FormaEntrega GetFormaEntregaById(int formaEntregaId)
         {
-            var getFormaEntregaById = _context.FormaEntregas.FirstOrDefault(x => x.FormaEntregaId == formaEntregaId);
-            return getFormaEntregaById;
+            var formaEntrega = _context.FormaEntregas.FirstOrDefault(x => x.FormaEntregaId == formaEntregaId);
+
+            return formaEntrega;
         }
 
         public List<FormaEntrega> GetFormaEntregaList()
         {
-            var getFormaEntregaList = _context.FormaEntregas.ToList();
-            return getFormaEntregaList;
+            var formaEntregaList = _context.FormaEntregas.ToList();
+
+            return formaEntregaList;
         }
     }
 }

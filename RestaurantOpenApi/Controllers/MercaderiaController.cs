@@ -16,9 +16,9 @@ namespace RestaurantOpenApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetMercaderiaByParametros(int tipo, string? nombre, string? orden = "ASC")
+        public IActionResult GetMercaderiaListFilters(int tipo, string? nombre, string? orden = "ASC")
         {
-            var result = _mercaderiaService.GetMercaderiaListOrdered(tipo, nombre, orden);
+            var result = _mercaderiaService.GetMercaderiaListFilters(tipo, nombre, orden);
             return new JsonResult(result);
         }
 
@@ -26,7 +26,7 @@ namespace RestaurantOpenApi.Controllers
         public IActionResult CreateMercaderia(MercaderiaRequest request)
         {
             var result = _mercaderiaService.CreateMercaderia(request);
-            return new JsonResult(result);
+            return new JsonResult(result) { StatusCode = 201 };
         }
 
         [HttpGet("{id}")]

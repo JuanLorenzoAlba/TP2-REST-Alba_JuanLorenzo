@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Domain.Entities;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Command
 {
@@ -23,20 +24,22 @@ namespace Infrastructure.Command
 
         public Comanda RemoveComanda(Guid comandaId)
         {
-            var removeComandaId = _context.Comandas.Single(x => x.ComandaId == comandaId);
-            _context.Remove(removeComandaId);
+            var comanda = _context.Comandas
+                .Include(s => s.FormaEntrega)
+                .FirstOrDefault(x => x.ComandaId == comandaId);
+
+            _context.Remove(comanda);
             _context.SaveChanges();
 
-            return removeComandaId;
+            return comanda;
         }
 
-        public Comanda UpdateComanda(Guid comandaId)
+        public Comanda UpdateComanda(Comanda comanda)
         {
-            var updateComandaId = _context.Comandas.Single(x => x.ComandaId == comandaId);
-            _context.Update(updateComandaId);
+            _context.Update(comanda);
             _context.SaveChanges();
 
-            return updateComandaId;
+            return comanda;
         }
     }
 }

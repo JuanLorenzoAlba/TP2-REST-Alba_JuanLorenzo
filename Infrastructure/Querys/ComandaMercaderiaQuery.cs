@@ -15,14 +15,16 @@ namespace Infrastructure.Querys
 
         public ComandaMercaderia GetComandaMercaderiaById(int comandaMercaderiaId)
         {
-            var getComandaMercaderiaById = _context.ComandasMercaderias.Single(x => x.ComandaMercaderiaId == comandaMercaderiaId);
-            return getComandaMercaderiaById;
+            var comandaMercaderia = _context.ComandasMercaderias.FirstOrDefault(x => x.ComandaMercaderiaId == comandaMercaderiaId);
+
+            return comandaMercaderia;
         }
 
         public List<ComandaMercaderia> GetComandaMercaderiaList()
         {
-            var getComandaMercaderiaList = _context.ComandasMercaderias.ToList();
-            return getComandaMercaderiaList;
+            var comandaMercaderiaList = _context.ComandasMercaderias.ToList();
+
+            return comandaMercaderiaList;
         }
     }
 }

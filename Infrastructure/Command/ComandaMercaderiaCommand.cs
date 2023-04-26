@@ -23,20 +23,19 @@ namespace Infrastructure.Command
 
         public ComandaMercaderia RemoveComandaMercaderia(int comandaMercaderiaId)
         {
-            var removeComandaMercaderiaId = _context.ComandasMercaderias.Single(x => x.ComandaMercaderiaId == comandaMercaderiaId);
-            _context.Remove(removeComandaMercaderiaId);
+            var comandaMercaderia = _context.ComandasMercaderias.FirstOrDefault(x => x.ComandaMercaderiaId == comandaMercaderiaId);
+            _context.Remove(comandaMercaderia);
             _context.SaveChanges();
 
-            return removeComandaMercaderiaId;
+            return comandaMercaderia;
         }
 
-        public ComandaMercaderia UpdateComandaMercaderia(int comandaMercaderiaId)
+        public ComandaMercaderia UpdateComandaMercaderia(ComandaMercaderia comandaMercaderia)
         {
-            var updateComandaMercaderiaId = _context.ComandasMercaderias.Single(x => x.ComandaMercaderiaId == comandaMercaderiaId);
-            _context.Update(updateComandaMercaderiaId);
+            _context.Update(comandaMercaderia);
             _context.SaveChanges();
 
-            return updateComandaMercaderiaId;
+            return comandaMercaderia;
         }
     }
 }

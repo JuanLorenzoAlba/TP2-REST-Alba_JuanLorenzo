@@ -6,6 +6,6 @@ namespace Application.Interfaces
     {
         TipoMercaderia InsertTipoMercaderia(TipoMercaderia tipoMercaderia);
         TipoMercaderia RemoveTipoMercaderia(int tipoMercaderiaId);
-        TipoMercaderia UpdateTipoMercaderia(int tipoMercaderiaId);
+        TipoMercaderia UpdateTipoMercaderia(TipoMercaderia tipoMercaderia);
     }
 }

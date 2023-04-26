@@ -10,10 +10,13 @@ namespace Application.UseCase.Mercaderias
         private readonly IMercaderiaCommand _command;
         private readonly IMercaderiaQuery _query;
 
-        public MercaderiaService(IMercaderiaCommand command, IMercaderiaQuery query)
+        private readonly ITipoMercaderiaQuery _tipoMercaderiaQuery;
+
+        public MercaderiaService(IMercaderiaCommand command, IMercaderiaQuery query, ITipoMercaderiaQuery tipoMercaderiaQuery)
         {
             _command = command;
             _query = query;
+            _tipoMercaderiaQuery = tipoMercaderiaQuery;
         }
 
         public MercaderiaResponse GetMercaderiaById(int mercaderiaId)
@@ -22,44 +25,18 @@ namespace Application.UseCase.Mercaderias
 
             return new MercaderiaResponse
             {
-                id = mercaderia.MercaderiaId,
-                nombre = mercaderia.Nombre,
-                tipo = new TipoMercaderiaResponse
+                Id = mercaderia.MercaderiaId,
+                Nombre = mercaderia.Nombre,
+                Tipo = new TipoMercaderiaResponse
                 {
-                    id = mercaderia.TipoMercaderiaId,
-                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                    Id = mercaderia.TipoMercaderiaId,
+                    Descripcion = mercaderia.TipoMercaderia.Descripcion
                 },
-                precio = mercaderia.Precio,
-                ingredientes = mercaderia.Ingredientes,
-                preparacion = mercaderia.Preparacion,
-                imagen = mercaderia.Imagen,
+                Precio = mercaderia.Precio,
+                Ingredientes = mercaderia.Ingredientes,
+                Preparacion = mercaderia.Preparacion,
+                Imagen = mercaderia.Imagen,
             };
-        }
-
-        public List<MercaderiaGetResponse> GetMercaderiaListOrdered(int tipo, string nombre, string orden)
-        {
-            var mercaderiaList = _query.GetMercaderiaListOrdered(tipo, nombre, orden);
-
-            var mercaderiaListResponse = new List<MercaderiaGetResponse>();
-
-            foreach (var x in mercaderiaList)
-            {
-                var mercaderiaResponse = new MercaderiaGetResponse
-                {
-                    id = x.MercaderiaId,
-                    nombre = x.Nombre,
-                    imagen = x.Imagen,
-                    precio = x.Precio,
-                    tipo = new TipoMercaderiaResponse
-                    {
-                        id = x.TipoMercaderia.TipoMercaderiaId,
-                        descripcion = x.TipoMercaderia.Descripcion
-                    }
-                };
-                mercaderiaListResponse.Add(mercaderiaResponse);
-            }
-
-            return mercaderiaListResponse;
         }
 
         public List<Mercaderia> GetMercaderiaList()
@@ -67,34 +44,60 @@ namespace Application.UseCase.Mercaderias
             return _query.GetMercaderiaList();
         }
 
+        public List<MercaderiaGetResponse> GetMercaderiaListFilters(int tipo, string nombre, string orden)
+        {
+            var mercaderiaList = _query.GetMercaderiaListFilters(tipo, nombre, orden);
+
+            List<MercaderiaGetResponse> MercaderiaGetResponseList = new List<MercaderiaGetResponse>();
+
+            foreach (var mercaderia in mercaderiaList)
+            {
+                var mercaderiaResponse = new MercaderiaGetResponse
+                {
+                    Id = mercaderia.MercaderiaId,
+                    Nombre = mercaderia.Nombre,
+                    Imagen = mercaderia.Imagen,
+                    Precio = mercaderia.Precio,
+                    Tipo = new TipoMercaderiaResponse
+                    {
+                        Id = mercaderia.TipoMercaderia.TipoMercaderiaId,
+                        Descripcion = mercaderia.TipoMercaderia.Descripcion
+                    }
+                };
+                MercaderiaGetResponseList.Add(mercaderiaResponse);
+            }
+
+            return MercaderiaGetResponseList;
+        }
+
         public MercaderiaResponse CreateMercaderia(MercaderiaRequest request)
         {
             var mercaderia = new Mercaderia
             {
-                Nombre = request.nombre,
-                Precio = request.precio,
-                Ingredientes = request.ingredientes,
-                Preparacion = request.preparacion,
-                Imagen = request.imagen,
-                TipoMercaderiaId = request.tipo,
-                TipoMercaderia = _query.GetMercaderiaByFormaEntrega(request.tipo).TipoMercaderia
-            };
+                Nombre = request.Nombre,
+                Precio = request.Precio,
+                Ingredientes = request.Ingredientes,
+                Preparacion = request.Preparacion,
+                Imagen = request.Imagen,
+                TipoMercaderiaId = request.Tipo,
+                TipoMercaderia = _tipoMercaderiaQuery.GetTipoMercaderiaById(request.Tipo)
+        };
 
             _command.InsertMercaderia(mercaderia);
 
             return new MercaderiaResponse
             {
-                id = mercaderia.MercaderiaId,
-                nombre = mercaderia.Nombre,
-                tipo = new TipoMercaderiaResponse
+                Id = mercaderia.MercaderiaId,
+                Nombre = mercaderia.Nombre,
+                Tipo = new TipoMercaderiaResponse
                 {
-                    id = mercaderia.TipoMercaderiaId,
-                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                    Id = mercaderia.TipoMercaderiaId,
+                    Descripcion = mercaderia.TipoMercaderia.Descripcion
                 },
-                precio = mercaderia.Precio,
-                ingredientes = mercaderia.Ingredientes,
-                preparacion = mercaderia.Preparacion,
-                imagen = mercaderia.Imagen,
+                Precio = mercaderia.Precio,
+                Ingredientes = mercaderia.Ingredientes,
+                Preparacion = mercaderia.Preparacion,
+                Imagen = mercaderia.Imagen,
             };
         }
 
@@ -104,37 +107,47 @@ namespace Application.UseCase.Mercaderias
 
             return new MercaderiaResponse
             {
-                id = mercaderia.MercaderiaId,
-                nombre = mercaderia.Nombre,
-                tipo = new TipoMercaderiaResponse
+                Id = mercaderia.MercaderiaId,
+                Nombre = mercaderia.Nombre,
+                Tipo = new TipoMercaderiaResponse
                 {
-                    id = mercaderia.TipoMercaderiaId,
-                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                    Id = mercaderia.TipoMercaderiaId,
+                    Descripcion = mercaderia.TipoMercaderia.Descripcion
                 },
-                precio = mercaderia.Precio,
-                ingredientes = mercaderia.Ingredientes,
-                preparacion = mercaderia.Preparacion,
-                imagen = mercaderia.Imagen,
+                Precio = mercaderia.Precio,
+                Ingredientes = mercaderia.Ingredientes,
+                Preparacion = mercaderia.Preparacion,
+                Imagen = mercaderia.Imagen,
             };
         }
 
         public MercaderiaResponse UpdateMercaderia(int mercaderiaId, MercaderiaRequest request)
         {
-            var mercaderia = _command.UpdateMercaderia(mercaderiaId, request);
+            var mercaderia = _query.GetMercaderiaById(mercaderiaId);
+
+            mercaderia.Nombre = request.Nombre;
+            mercaderia.Precio = request.Precio;
+            mercaderia.Ingredientes = request.Ingredientes;
+            mercaderia.Preparacion = request.Preparacion;
+            mercaderia.Imagen = request.Imagen;
+            mercaderia.TipoMercaderiaId = request.Tipo;
+            mercaderia.TipoMercaderia = _tipoMercaderiaQuery.GetTipoMercaderiaById(request.Tipo);
+
+            _command.UpdateMercaderia(mercaderia);
 
             return new MercaderiaResponse
             {
-                id = mercaderia.MercaderiaId,
-                nombre = mercaderia.Nombre,
-                tipo = new TipoMercaderiaResponse
+                Id = mercaderia.MercaderiaId,
+                Nombre = mercaderia.Nombre,
+                Tipo = new TipoMercaderiaResponse
                 {
-                    id = mercaderia.TipoMercaderiaId,
-                    descripcion = mercaderia.TipoMercaderia.Descripcion
+                    Id = mercaderia.TipoMercaderiaId,
+                    Descripcion = mercaderia.TipoMercaderia.Descripcion
                 },
-                precio = mercaderia.Precio,
-                ingredientes = mercaderia.Ingredientes,
-                preparacion = mercaderia.Preparacion,
-                imagen = mercaderia.Imagen,
+                Precio = mercaderia.Precio,
+                Ingredientes = mercaderia.Ingredientes,
+                Preparacion = mercaderia.Preparacion,
+                Imagen = mercaderia.Imagen,
             };
         }
     }

@@ -2,11 +2,11 @@
 {
     public class MercaderiaRequest
     {
-        public string nombre { set; get; }
-        public int tipo { set; get; }
-        public int precio { get; set; }
-        public string ingredientes { set; get; }
-        public string preparacion { set; get; }
-        public string imagen { set; get; }
+        public string Nombre { set; get; }
+        public int Tipo { set; get; }
+        public int Precio { get; set; }
+        public string Ingredientes { set; get; }
+        public string Preparacion { set; get; }
+        public string Imagen { set; get; }
     }
 }

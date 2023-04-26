@@ -18,8 +18,16 @@ namespace RestaurantOpenApi.Controllers
         [HttpGet]
         public IActionResult GetComandaByFecha(string fecha)
         {
-            var result = _comandaService.GetComandaByFecha(fecha);
-            return new JsonResult(result);
+            try
+            {
+                var result = _comandaService.GetComandaByFecha(fecha);
+                return new JsonResult(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPost]

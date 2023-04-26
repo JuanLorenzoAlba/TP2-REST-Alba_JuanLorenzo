@@ -6,6 +6,6 @@ namespace Application.Interfaces
     {
         ComandaMercaderia InsertComandaMercaderia(ComandaMercaderia comandaMercaderia);
         ComandaMercaderia RemoveComandaMercaderia(int comandaMercaderiaId);
-        ComandaMercaderia UpdateComandaMercaderia(int comandaMercaderiaId);
+        ComandaMercaderia UpdateComandaMercaderia(ComandaMercaderia comandaMercaderia);
     }
 }

@@ -2,10 +2,10 @@
 {
     public class MercaderiaGetResponse
     {
-        public int id { set; get; }
-        public string nombre { set; get; }
-        public int precio { get; set; }
-        public TipoMercaderiaResponse tipo { set; get; }
-        public string imagen { set; get; }
+        public int Id { set; get; }
+        public string Nombre { set; get; }
+        public int Precio { get; set; }
+        public TipoMercaderiaResponse Tipo { set; get; }
+        public string Imagen { set; get; }
     }
 }

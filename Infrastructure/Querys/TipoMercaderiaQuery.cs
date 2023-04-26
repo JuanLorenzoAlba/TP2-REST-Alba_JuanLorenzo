@@ -15,14 +15,16 @@ namespace Infrastructure.Querys
 
         public TipoMercaderia GetTipoMercaderiaById(int tipoMercaderiaId)
         {
-            var getTipoMercaderiaById = _context.TipoMercaderias.Single(x => x.TipoMercaderiaId == tipoMercaderiaId);
-            return getTipoMercaderiaById;
+            var tipoMercaderia = _context.TipoMercaderias.FirstOrDefault(x => x.TipoMercaderiaId == tipoMercaderiaId);
+
+            return tipoMercaderia;
         }
 
         public List<TipoMercaderia> GetTipoMercaderiaList()
         {
-            var getTipoMercaderiaList = _context.TipoMercaderias.ToList();
-            return getTipoMercaderiaList;
+            var tipoMercaderiaList = _context.TipoMercaderias.ToList();
+
+            return tipoMercaderiaList;
         }
     }
 }

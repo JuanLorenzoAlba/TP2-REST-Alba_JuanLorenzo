@@ -41,7 +41,9 @@ namespace Application.UseCase.FormaEntregas
 
         public FormaEntrega UpdateFormaEntrega(int formaEntregaId)
         {
-            return _command.UpdateFormaEntrega(formaEntregaId);
+            var formaEntrega = _query.GetFormaEntregaById(formaEntregaId);
+
+            return _command.UpdateFormaEntrega(formaEntrega);
         }
     }
 }

@@ -6,6 +6,6 @@ namespace Application.Interfaces
     {
         FormaEntrega InsertFormaEntrega(FormaEntrega formaEntrega);
         FormaEntrega RemoveFormaEntrega(int formaEntregaId);
-        FormaEntrega UpdateFormaEntrega(int formaEntregaId);
+        FormaEntrega UpdateFormaEntrega(FormaEntrega formaEntrega);
     }
 }
