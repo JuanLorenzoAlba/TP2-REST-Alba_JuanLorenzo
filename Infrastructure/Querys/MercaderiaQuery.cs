@@ -23,6 +23,13 @@ namespace Infrastructure.Querys
             return mercaderia;
         }
 
+        public List<Mercaderia> GetMercaderiaList()
+        {
+            var mercaderiaList = _context.Mercaderias.ToList();
+
+            return mercaderiaList;
+        }
+
         public List<Mercaderia> GetMercaderiaListFilters(int tipo, string nombre, string orden)
         {
             var mercaderiaList = _context.Mercaderias
@@ -48,11 +55,36 @@ namespace Infrastructure.Querys
             return mercaderiaList;
         }
 
-        public List<Mercaderia> GetMercaderiaList()
+        public bool ExisteMercaderiaEnComanda(int mercaderiaId)
         {
-            var mercaderiaList = _context.Mercaderias.ToList();
+            bool existeMercaderia = _context.Comandas
+                .Any(c => c.ComandasMercaderias
+                .Any(cm => cm.MercaderiaId == mercaderiaId));
 
-            return mercaderiaList;
+            if (existeMercaderia)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ExisteMercaderiaNombre(string nombre)
+        {
+            bool existeMercaderia = _context.Mercaderias
+                .Include(s => s.TipoMercaderia)
+                .Any(x => x.Nombre.ToLower() == nombre.ToLower());
+
+            if (existeMercaderia)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

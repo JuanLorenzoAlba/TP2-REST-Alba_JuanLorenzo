@@ -7,5 +7,7 @@ namespace Application.Interfaces
         Mercaderia GetMercaderiaById(int mercaderiaId);
         List<Mercaderia> GetMercaderiaList();
         List<Mercaderia> GetMercaderiaListFilters(int tipo, string nombre, string orden);
+        bool ExisteMercaderiaEnComanda(int mercaderiaId);
+        bool ExisteMercaderiaNombre(string nombre);
     }
 }

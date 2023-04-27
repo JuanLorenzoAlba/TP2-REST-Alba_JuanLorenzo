@@ -14,20 +14,25 @@ namespace Application.UseCase.Comandas
 
         private readonly IComandaMercaderiaService _comandaMercaderiaService;
 
-        private readonly IFormaEntregaQuery _formaEntregaQuery;
+        private readonly IFormaEntregaService _formaEntregaService;
 
-        public ComandaService(IComandaCommand command, IComandaQuery query, IMercaderiaQuery mercaderiaQuery, IComandaMercaderiaService comandaMercaderiaService, IFormaEntregaQuery formaEntregaQuery)
+        public ComandaService(IComandaCommand command, IComandaQuery query, IMercaderiaQuery mercaderiaQuery, IComandaMercaderiaService comandaMercaderiaService, IFormaEntregaService formaEntregaService)
         {
             _command = command;
             _query = query;
             _mercaderiaQuery = mercaderiaQuery;
             _comandaMercaderiaService = comandaMercaderiaService;
-            _formaEntregaQuery = formaEntregaQuery;
+            _formaEntregaService = formaEntregaService;
         }
 
         public ComandaGetResponse GetComandaById(Guid comandaId)
         {
             var comanda = _query.GetComandaById(comandaId);
+
+            if (comanda == null)
+            {
+                throw new ArgumentException($"No se encontró la comanda con el identificador '{comandaId}'.");
+            }
 
             List<MercaderiaGetResponse> mercaderiaGetResponseList = new List<MercaderiaGetResponse>();
 
@@ -59,38 +64,42 @@ namespace Application.UseCase.Comandas
                 Total = comanda.PrecioTotal,
                 Fecha = comanda.Fecha,
             };
-
         }
 
-        public ComandaResponse GetComandaByFecha(string fecha)
+        public List<ComandaResponse> GetComandaByFecha(string fecha)
         {
-            var comanda = _query.GetComandaByFecha(fecha);
+            var comandaList = _query.GetComandaListByFecha(fecha);
 
-            List<MercaderiaComandaResponse> mercaderiaComandaResponseList = new List<MercaderiaComandaResponse>();
+            List<ComandaResponse> comandaResponseList = new List<ComandaResponse>();
 
-            foreach (var mercaderia in _query.GetMercaderias(comanda.ComandaId))
+            foreach (var comanda in comandaList)
             {
-                mercaderiaComandaResponseList.Add(new MercaderiaComandaResponse
+                List<MercaderiaComandaResponse> mercaderiaComandaResponseList = new List<MercaderiaComandaResponse>();
+
+                foreach (var mercaderia in _query.GetMercaderias(comanda.ComandaId))
                 {
-                    Id = mercaderia.MercaderiaId,
-                    Nombre = mercaderia.Nombre,
-                    Precio = mercaderia.Precio,
+                    mercaderiaComandaResponseList.Add(new MercaderiaComandaResponse
+                    {
+                        Id = mercaderia.MercaderiaId,
+                        Nombre = mercaderia.Nombre,
+                        Precio = mercaderia.Precio,
+                    });
+                }
+
+                comandaResponseList.Add(new ComandaResponse
+                {
+                    Id = comanda.ComandaId,
+                    Mercaderias = mercaderiaComandaResponseList,
+                    FormaEntrega = new FormaEntregaResponse
+                    {
+                        Id = comanda.FormaEntregaId,
+                        Descripcion = comanda.FormaEntrega.Descripcion
+                    },
+                    Total = comanda.PrecioTotal,
+                    Fecha = comanda.Fecha,
                 });
             }
-
-            return new ComandaResponse
-            {
-                Id = comanda.ComandaId,
-                Mercaderias = mercaderiaComandaResponseList,
-                FormaEntrega = new FormaEntregaResponse
-                {
-                    Id = comanda.FormaEntregaId,
-                    Descripcion = comanda.FormaEntrega.Descripcion
-                },
-
-                Total = comanda.PrecioTotal,
-                Fecha = comanda.Fecha,
-            };
+            return comandaResponseList;
         }
 
         public List<Comanda> GetComandaList()
@@ -105,6 +114,8 @@ namespace Application.UseCase.Comandas
 
         public ComandaResponse CreateComanda(ComandaRequest request)
         {
+            _query.ValidadorComanda(request);
+
             int precioTotal = 0;
 
             List<Mercaderia> mercaderiaList = request.Mercaderias.Select(_mercaderiaQuery.GetMercaderiaById).ToList();
@@ -126,7 +137,7 @@ namespace Application.UseCase.Comandas
                 PrecioTotal = precioTotal,
                 Fecha = DateTime.Now.Date,
                 FormaEntregaId = request.FormaEntrega,
-                FormaEntrega = _formaEntregaQuery.GetFormaEntregaById(request.FormaEntrega),
+                FormaEntrega = _formaEntregaService.GetFormaEntregaById(request.FormaEntrega),
             };
             _command.InsertComanda(comanda);
 
@@ -159,6 +170,11 @@ namespace Application.UseCase.Comandas
             var comanda = _query.GetComandaById(comandaId);
 
             return _command.UpdateComanda(comanda);
+        }
+
+        public void ValidadorComanda(ComandaRequest request)
+        {
+            _query.ValidadorComanda(request);
         }
     }
 }

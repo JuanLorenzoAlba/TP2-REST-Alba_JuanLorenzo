@@ -12,5 +12,7 @@ namespace Application.Interfaces
         MercaderiaResponse CreateMercaderia(MercaderiaRequest request);
         MercaderiaResponse RemoveMercaderia(int mercaderiaId);
         MercaderiaResponse UpdateMercaderia(int mercaderiaId, MercaderiaRequest request);
+        bool ExisteMercaderiaEnComanda(int mercaderiaId);
+        bool ExisteMercaderiaNombre(string nombre);
     }
 }

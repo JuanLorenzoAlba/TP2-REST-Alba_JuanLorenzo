@@ -10,18 +10,23 @@ namespace Application.UseCase.Mercaderias
         private readonly IMercaderiaCommand _command;
         private readonly IMercaderiaQuery _query;
 
-        private readonly ITipoMercaderiaQuery _tipoMercaderiaQuery;
+        private readonly ITipoMercaderiaService _tipoMercaderiaService;
 
-        public MercaderiaService(IMercaderiaCommand command, IMercaderiaQuery query, ITipoMercaderiaQuery tipoMercaderiaQuery)
+        public MercaderiaService(IMercaderiaCommand command, IMercaderiaQuery query, ITipoMercaderiaService tipoMercaderiaService)
         {
             _command = command;
             _query = query;
-            _tipoMercaderiaQuery = tipoMercaderiaQuery;
+            _tipoMercaderiaService = tipoMercaderiaService;
         }
 
         public MercaderiaResponse GetMercaderiaById(int mercaderiaId)
         {
             var mercaderia = _query.GetMercaderiaById(mercaderiaId);
+
+            if (mercaderia == null)
+            {
+                throw new ArgumentException($"No se encontró la mercaderia con el identificador {mercaderiaId}.");
+            }
 
             return new MercaderiaResponse
             {
@@ -72,6 +77,11 @@ namespace Application.UseCase.Mercaderias
 
         public MercaderiaResponse CreateMercaderia(MercaderiaRequest request)
         {
+            if (_tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo) == null)
+            {
+                throw new ArgumentException($"No se encontró el tipo de mercaderia con el identificador {request.Tipo}.");
+            }
+
             var mercaderia = new Mercaderia
             {
                 Nombre = request.Nombre,
@@ -80,8 +90,8 @@ namespace Application.UseCase.Mercaderias
                 Preparacion = request.Preparacion,
                 Imagen = request.Imagen,
                 TipoMercaderiaId = request.Tipo,
-                TipoMercaderia = _tipoMercaderiaQuery.GetTipoMercaderiaById(request.Tipo)
-        };
+                TipoMercaderia = _tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo)
+            };
 
             _command.InsertMercaderia(mercaderia);
 
@@ -103,6 +113,11 @@ namespace Application.UseCase.Mercaderias
 
         public MercaderiaResponse RemoveMercaderia(int mercaderiaId)
         {
+            if (_query.GetMercaderiaById(mercaderiaId) == null)
+            {
+                throw new ArgumentException($"No se encontró la mercaderia que desea eliminar con el identificador '{mercaderiaId}'.");
+            }
+
             var mercaderia = _command.RemoveMercaderia(mercaderiaId);
 
             return new MercaderiaResponse
@@ -125,13 +140,23 @@ namespace Application.UseCase.Mercaderias
         {
             var mercaderia = _query.GetMercaderiaById(mercaderiaId);
 
+            if (_tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo) == null)
+            {
+                throw new ArgumentException($"No se encontró el tipo de mercaderia con el identificador {request.Tipo}.");
+            }
+
+            if (mercaderia == null)
+            {
+                throw new ArgumentException($"No se encontró la mercaderia con el identificador {mercaderiaId}.");
+            }
+
             mercaderia.Nombre = request.Nombre;
             mercaderia.Precio = request.Precio;
             mercaderia.Ingredientes = request.Ingredientes;
             mercaderia.Preparacion = request.Preparacion;
             mercaderia.Imagen = request.Imagen;
             mercaderia.TipoMercaderiaId = request.Tipo;
-            mercaderia.TipoMercaderia = _tipoMercaderiaQuery.GetTipoMercaderiaById(request.Tipo);
+            mercaderia.TipoMercaderia = _tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo);
 
             _command.UpdateMercaderia(mercaderia);
 
@@ -149,6 +174,16 @@ namespace Application.UseCase.Mercaderias
                 Preparacion = mercaderia.Preparacion,
                 Imagen = mercaderia.Imagen,
             };
+        }
+
+        public bool ExisteMercaderiaEnComanda(int mercaderiaId)
+        {
+            return _query.ExisteMercaderiaEnComanda(mercaderiaId);
+        }
+
+        public bool ExisteMercaderiaNombre(string nombre)
+        {
+            return _query.ExisteMercaderiaNombre(nombre);
         }
     }
 }

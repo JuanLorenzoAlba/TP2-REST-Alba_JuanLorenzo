@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Request;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -23,15 +24,19 @@ namespace Infrastructure.Querys
             return comanda;
         }
 
-        public Comanda GetComandaByFecha(string fecha)
+        public List<Comanda> GetComandaListByFecha(string fecha)
         {
-            DateTime dateTime = DateTime.Parse(fecha);
-
-            var comanda = _context.Comandas
+            var comandaList = _context.Comandas
                 .Include(s => s.FormaEntrega)
-                .FirstOrDefault(x => x.Fecha == dateTime);
+                .ToList();
 
-            return comanda;
+            if (fecha != null)
+            {
+                DateTime dateTime = DateTime.Parse(fecha);
+                comandaList = comandaList.Where(p => p.Fecha == dateTime).ToList();
+            }
+
+            return comandaList;
         }
 
         public List<Comanda> GetComandaList()
@@ -49,12 +54,31 @@ namespace Infrastructure.Querys
                 .ThenInclude(m => m.TipoMercaderia)
                 .FirstOrDefault(c => c.ComandaId == comandaId);
 
-
             var mercaderiaList = comandaList.ComandasMercaderias
                 .Select(cm => cm.Mercaderia)
                 .ToList();
 
             return mercaderiaList;
+        }
+
+        public void ValidadorComanda(ComandaRequest request)
+        {
+            foreach (var mercaderiaId in request.Mercaderias)
+            {
+                var mercaderia = _context.Mercaderias.FirstOrDefault(x => x.MercaderiaId == mercaderiaId);
+
+                if (mercaderia == null)
+                {
+                    throw new ArgumentException($"No se encontró la mercadería con el identificador '{mercaderiaId}'.");
+                }
+            }
+
+            var formaEntrega = _context.FormaEntregas.FirstOrDefault(x => x.FormaEntregaId == request.FormaEntrega);
+
+            if (formaEntrega == null)
+            {
+                throw new ArgumentException($"No se encontró la forma de entrega con el identificador '{request.FormaEntrega}'.");
+            }
         }
     }
 }
