@@ -79,7 +79,7 @@ namespace RestaurantOpenApi.Controllers
         [ProducesResponseType(typeof(BadRequest), 409)]
         public IActionResult UpdateMercaderia(int id, MercaderiaRequest request)
         {
-            if (_service.ExisteMercaderiaNombre(request.Nombre))
+            if (_service.ExisteMercaderiaNombre(request.Nombre) && _service.GetMercaderiaById(id).Nombre != request.Nombre)
             {
                 return Conflict(new BadRequest
                 {
@@ -91,9 +91,18 @@ namespace RestaurantOpenApi.Controllers
                 var result = _service.UpdateMercaderia(id, request);
                 return new JsonResult(result);
             }
+
             catch (ArgumentException ex)
             {
                 return NotFound(new BadRequest
+                {
+                    Message = ex.Message
+                });
+            }
+
+            catch (Exception ex)
+            {
+                return BadRequest(new BadRequest
                 {
                     Message = ex.Message
                 });

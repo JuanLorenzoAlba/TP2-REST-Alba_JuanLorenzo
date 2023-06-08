@@ -19,7 +19,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Custom
-
 var connectionString = builder.Configuration["ConnectionString"];
 builder.Services.AddDbContext<RestaurantContext>(options => options.UseSqlServer(connectionString));
 
@@ -43,6 +42,17 @@ builder.Services.AddScoped<IFormaEntregaService, FormaEntregaService>();
 builder.Services.AddScoped<IFormaEntregaCommand, FormaEntregaCommand>();
 builder.Services.AddScoped<IFormaEntregaQuery, FormaEntregaQuery>();
 
+//CORS deshabilitar
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,6 +61,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 

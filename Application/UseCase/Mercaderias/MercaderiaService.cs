@@ -53,7 +53,7 @@ namespace Application.UseCase.Mercaderias
         {
             var mercaderiaList = _query.GetMercaderiaListFilters(tipo, nombre, orden);
 
-            List<MercaderiaGetResponse> MercaderiaGetResponseList = new List<MercaderiaGetResponse>();
+            List<MercaderiaGetResponse> mercaderiaGetResponseList = new List<MercaderiaGetResponse>();
 
             foreach (var mercaderia in mercaderiaList)
             {
@@ -69,10 +69,10 @@ namespace Application.UseCase.Mercaderias
                         Descripcion = mercaderia.TipoMercaderia.Descripcion
                     }
                 };
-                MercaderiaGetResponseList.Add(mercaderiaResponse);
+                mercaderiaGetResponseList.Add(mercaderiaResponse);
             }
 
-            return MercaderiaGetResponseList;
+            return mercaderiaGetResponseList;
         }
 
         public MercaderiaResponse CreateMercaderia(MercaderiaRequest request)
@@ -140,14 +140,14 @@ namespace Application.UseCase.Mercaderias
         {
             var mercaderia = _query.GetMercaderiaById(mercaderiaId);
 
-            if (_tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo) == null)
-            {
-                throw new ArgumentException($"No se encontró el tipo de mercaderia con el identificador {request.Tipo}.");
-            }
-
             if (mercaderia == null)
             {
                 throw new ArgumentException($"No se encontró la mercaderia con el identificador {mercaderiaId}.");
+            }
+
+            if (_tipoMercaderiaService.GetTipoMercaderiaById(request.Tipo) == null)
+            {
+                throw new Exception($"No se encontró el tipo de mercaderia con el identificador {request.Tipo}.");
             }
 
             mercaderia.Nombre = request.Nombre;
